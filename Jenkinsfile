@@ -8,7 +8,7 @@ pipeline{
 	
 		stage('SCM - Checkout'){
 			steps{
-				git url: 'https://github.com/javahometech/myweb'
+				git credentialsId: 'git_Credentials', url: 'https://github.com/harikrishna12334/maven_project.git'
 			
 			}
 		}
