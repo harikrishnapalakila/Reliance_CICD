@@ -32,13 +32,13 @@ pipeline{
 		stage('Maven Build - PKG with Rename war file'){
 			steps{
 			bat "mvn package"
-			bat "rename target\\myweb-8.3.2.war myweb.war"
+			bat "rename target\\MavenWebApp-0.0.1-SNAPSHOT.war MavenWebApp.war"
 			
 			}
  	}
 		stage('Deploy to tomcat8'){
 			steps{
-			bat "copy target\\myweb.war D:\\Krishna\\AWS\\tomcat\\apache-tomcat-8.5.39\\webapps\\"
+			bat "copy target\\MavenWebApp.war D:\\Krishna\\AWS\\tomcat\\apache-tomcat-8.5.39\\webapps\\"
 			
 			}
  	}
