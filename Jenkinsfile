@@ -43,15 +43,18 @@ pipeline{
 			
 			}
  	}
-		stage('SonarQube analysis'){
-			steps{
-			// requires SonarQube Scanner 2.8+
-			def scannerHome = tool 'sonar';
-			withSonarQubeEnv('sonarqube_server_details') {
-				bat "${scannerHome}/bin/sonar-scanner"
+		
+		stage('SonarQube analysis') {
+			tools {
+				sonarQube 'SonarQube Scanner 3.0.3.778'
 			}
+			steps {
+				withSonarQubeEnv('SonarQube Scanner') {
+					sh 'sonar-scanner'        
+				}
 			}
 		}
+		
 		
 		stage('SonarQube- Code Analysis'){
 			steps{
