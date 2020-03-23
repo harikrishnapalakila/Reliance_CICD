@@ -44,16 +44,18 @@ pipeline{
 			}
  	}
 		
-		stage('SonarQube analysis') {
-			tools {
-				sonarQube 'sonar'
-			}
+		stage('Sonarqube analysis') {
 			steps {
-				withSonarQubeEnv('SonarQube Scanner') {
-					bat 'sonar-scanner'        
+				script {
+					scannerHome = tool 'SonarQube Scanner 4.3.0.2012';
+				}
+				withSonarQubeEnv('SonarQube') {
+					bat "${scannerHome}/bin/sonar-scanner.bat" 
 				}
 			}
 		}
+		
+		
 		
 		
 		stage('SonarQube- Code Analysis'){
