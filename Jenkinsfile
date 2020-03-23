@@ -43,6 +43,17 @@ pipeline{
 			
 			}
  	}
+		
+		
+		stage('SonarQube- Code Analysis'){
+			steps{
+				def scannerhome = tool 'sonar_scanner'
+				withSonarQubeEnv ('sonarqube_server_details') {
+					bat "${scannerHome}/bin/sonar-runner.bat"                             
+				    }
+			}
+		}
+				
 		stage('Deploy to tomcat8-ec2-user'){
 			steps{
 			sshagent(['tomcat_ec2-user']) {
