@@ -49,7 +49,7 @@ pipeline{
 			steps{
 				def scannerhome = tool 'sonar_scanner'
 				withSonarQubeEnv ('sonarqube_server_details') {
-					bat "${scannerHome}/bin/sonar-runner.bat"                             
+					bat "D:\\Krishna\\AWS\\sonarqube\\sonar-scanner-cli-3.3.0.1492-windows\\sonar-scanner-3.3.0.1492-windows\\bin\\sonar-runner.bat"                             
 				    }
 			}
 		}
