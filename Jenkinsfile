@@ -50,7 +50,7 @@ pipeline{
 			}
 			steps {
 				withSonarQubeEnv('SonarQube Scanner') {
-					sh 'sonar-scanner'        
+					bat 'sonar-scanner'        
 				}
 			}
 		}
