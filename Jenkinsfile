@@ -58,13 +58,7 @@ pipeline{
 		
 		
 		
-		stage('SonarQube- Code Analysis'){
-			steps{
-				withSonarQubeEnv ('sonarqube_server_details') {
-					bat "mvn sonar:sonar"                             
-				    }
-			}
-		}
+		
 				
 		stage('Deploy to tomcat8-ec2-user'){
 			steps{
