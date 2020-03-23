@@ -43,13 +43,17 @@ pipeline{
 			}
  	}
 		stage('Deploy to tomcat8-ec2-user'){
-		  sshagent(['tomcat_ec2-user']) {
+			steps{
+			sshagent(['tomcat_ec2-user']) {
 		     sh """
 			scp -o StrictHostKeyChecking=no target\\MavenWebApp.war ec2-user@172.31.28.99:/opt/tomcat8/webapps/
 		        ssh ec2-user@172.31.28.99 /opt/tomcat/bin/shutdown.sh
 			ssh ec2-user@172.31.28.99 /opt/tomcat/bin/startup.sh
 			"""
 		  }
+			
+			
+			}
 		
 			
 			}
