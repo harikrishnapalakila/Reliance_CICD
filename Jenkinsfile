@@ -1,4 +1,4 @@
-CurrentBuild.displayName = "Reliance_Harikrishna_#"+currentBuild.number
+currentBuild.displayName = "Reliance_Harikrishna_#"+currentBuild.number
 pipeline{
 	agent any
 	
