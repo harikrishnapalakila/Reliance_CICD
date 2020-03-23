@@ -44,18 +44,25 @@ pipeline{
 			}
  	}
 		
+		stage('SonarQube- Code Analysis'){
+			steps{
+				withSonarQubeEnv ('sonarqube_server_details') {
+					bat "mvn sonar:sonar"                             
+				    }
+			}
+		}
+		
+		
 		stage('Sonarqube analysis') {
 			steps {
 				script {
 					scannerHome = tool 'sonar';
 				}
 				withSonarQubeEnv('SonarQube') {
-					bat "${scannerHome}/bin/sonar-scanner.bat" 
+					bat "D:\\Krishna\\AWS\\sonarqube\\sonar-scanner-cli-3.3.0.1492-windows\\sonar-scanner-3.3.0.1492-windows\\bin\\sonar-scanner.bat" 
 				}
 			}
-		}
-		
-		
+		}	
 		
 		
 		
