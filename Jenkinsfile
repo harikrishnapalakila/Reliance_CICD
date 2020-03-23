@@ -43,11 +43,11 @@ pipeline{
 			
 			}
  	}
-		stage(‘SonarQube analysis’){
+		stage('SonarQube analysis'){
 			// requires SonarQube Scanner 2.8+
-			def scannerHome = tool ‘sonar’;
-			withSonarQubeEnv(‘sonarqube_server_details’) {
-				bat “${scannerHome}/bin/sonar-scanner”
+			def scannerHome = tool 'sonar';
+			withSonarQubeEnv('sonarqube_server_details') {
+				bat "${scannerHome}/bin/sonar-scanner"
 			}
 		}
 		
