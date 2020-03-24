@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.codebind</groupId>
   <artifactId>MavenWebApp</artifactId>
-  <version>0.0.1</version>
+  <version>1.0.0</version>
   <packaging>war</packaging>
   <dependencies>
   <!-- https://mvnrepository.com/artifact/junit/junit -->
