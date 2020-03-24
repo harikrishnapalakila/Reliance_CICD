@@ -40,7 +40,7 @@ pipeline{
  	}
 		stage('Deploy to tomcat8'){
 			steps{
-			bat "copy target\\MavenWebApp-2.0.0.war D:\\Krishna\\AWS\\tomcat\\apache-tomcat-8.5.39\\webapps\\"
+			bat "copy target\\MavenWebApp-3.0.0.war D:\\Krishna\\AWS\\tomcat\\apache-tomcat-8.5.39\\webapps\\"
 			
 			}
  	}
