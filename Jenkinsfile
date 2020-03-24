@@ -100,7 +100,12 @@ pipeline{
 			}
 		}	
 		
-		
+		stage('Email Notification') {
+			steps {
+		mail bcc: '', body: '''Hi Team,
+		This is jenksin piepline job''', cc: '', from: '', replyTo: '', subject: 'jenkins job', to: 'harikrishnapalakila@gmail.com'
+			}
+		}
 		
 				
 		stage('Deploy to tomcat8-ec2-user'){
