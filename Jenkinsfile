@@ -2,6 +2,10 @@ currentBuild.displayName = "Reliance_Harikrishna_#"+currentBuild.number
 pipeline{
 	agent any
 	
+	options {
+		buildDiscarder logRotator(daysToKeepStr: '5', numToKeepStr: '7')
+	}
+
 	environment {
 		PATH = "${PATH}:D:/Krishna/Binaries/apache-maven-3.6.0-bin/apache-maven-3.6.0/bin"
 		
