@@ -79,7 +79,7 @@ pipeline{
 				 def mavenPom = readMavenPom file: 'pom.xml'
 				 version: "${mavenPom.version}"
 			bat "copy target\\MavenWebApp-${mavenPom.version}.war D:\\Krishna\\AWS\\tomcat\\apache-tomcat-8.5.39\\webapps\\"
-			
+			 }
 			}
  	}	
 		
