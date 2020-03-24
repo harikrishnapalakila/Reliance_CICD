@@ -31,20 +31,6 @@ pipeline{
 			}
  	}
 	
-		stage('Maven Build - PKG with Rename war file'){
-			steps{
-			bat "mvn package"
-			
-			
-			}
- 	}
-		stage('Deploy to tomcat8'){
-			steps{
-			bat "copy target\\MavenWebApp-3.0.0.war D:\\Krishna\\AWS\\tomcat\\apache-tomcat-8.5.39\\webapps\\"
-			
-			}
- 	}
-		
 		stage('SonarQube- Code Analysis'){
 			steps{
 				withSonarQubeEnv ('sonarqube_server_details') {
@@ -53,7 +39,13 @@ pipeline{
 			}
 		}
 		
-		
+		stage('Maven Build - PKG with Rename war file'){
+			steps{
+			bat "mvn package"
+			
+			
+			}
+ 	}
 		stage('Upload War to Nexus'){
 			steps{
 				script{
@@ -81,8 +73,15 @@ pipeline{
 			}
 		}
 		
-		
-		
+		stage('Deploy to tomcat8'){
+			steps{
+			 script{
+				 def mavenPom = readMavenPom file: 'pom.xml'
+				 version: "${mavenPom.version}"
+			bat "copy target\\MavenWebApp-${mavenPom.version}.war D:\\Krishna\\AWS\\tomcat\\apache-tomcat-8.5.39\\webapps\\"
+			
+			}
+ 	}	
 		
 		
 		
