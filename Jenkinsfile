@@ -96,34 +96,6 @@ pipeline{
 		}
 		
 		
-		stage('Sonarqube analysis') {
-			steps {
-				script {
-					scannerHome = tool 'sonar';
-				}
-				withSonarQubeEnv('SonarQube') {
-					bat "D:\\Krishna\\AWS\\sonarqube\\sonar-scanner-cli-3.3.0.1492-windows\\sonar-scanner-3.3.0.1492-windows\\bin\\sonar-scanner.bat" 
-				}
-			}
-		}	
-		
-				
-				
-		stage('Deploy to tomcat8-ec2-user'){
-			steps{
-			sshagent(['tomcat_ec2-user']) {
-		     sh """
-			scp -o StrictHostKeyChecking=no target\\MavenWebApp.war ec2-user@3.0.59.158:/opt/tomcat8/webapps/
-		        ssh ec2-user@3.0.59.158 /opt/tomcat/bin/shutdown.sh
-			ssh ec2-user@3.0.59.158 /opt/tomcat/bin/startup.sh
-			"""
-		  }
-			
-			
-			}
-		
-			
-			}
  	}
 			
 		
