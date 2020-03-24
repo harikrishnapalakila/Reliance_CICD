@@ -34,7 +34,7 @@ pipeline{
 		stage('Maven Build - PKG with Rename war file'){
 			steps{
 			bat "mvn package"
-			bat "rename target\\MavenWebApp-1.0.0.war MavenWebApp.war"
+			
 			
 			}
  	}
