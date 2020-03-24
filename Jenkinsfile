@@ -54,7 +54,26 @@ pipeline{
 		}
 		
 		
-		
+		stage('Upload War to Nexus'){
+			steps{
+				
+                       nexusArtifactUploader artifacts: [
+			       [
+				       artifactId: 'MavenWebApp', 
+				       classifier: '', 
+				       file: 'target/MavenWebApp-1.0.0.war', 
+				       type: 'war'
+			       ]
+		       ], 
+			       credentialsId: 'Nexus_admin', 
+			       groupId: 'com.codebind', 
+			       nexusUrl: '192.168.56.1:8081', 
+			       nexusVersion: 'nexus3', 
+			       protocol: 'http', 
+			       repository: 'http://192.168.56.1:8081/repository/simpleapp-release', 
+			       version: '1.0.0'
+			}
+		}
 		
 		
 		
