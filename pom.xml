@@ -12,6 +12,13 @@
     <version>4.12</version>
     <scope>test</scope>
 </dependency>
+<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>6.14.3</version>
+    <scope>test</scope>
+</dependency>
   <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 <dependency>
     <groupId>org.hibernate</groupId>
@@ -23,10 +30,9 @@
      <artifactId>jboss-logging</artifactId>
     </exclusion>
     </exclusions>
-</dependency>
-  
-  
+</dependency>  
   </dependencies>
+	
   <build>
 	<plugins>
 		
@@ -38,8 +44,25 @@
 				<failOnMissingWebXml>false</failOnMissingWebXml>
 			</configuration>
 		</plugin>
-		
-	</plugins>
-  </build>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<configuration>
+				<source>1.8</source>
+				<target>1.8</target>
+			</configuration>
+		</plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<version>2.18.1</version>
+			<configuration>
+				<suiteXmlFiles>
+					<suiteXmlFiles>testing.xml</suiteXmlFiles>
+				</suiteXmlFiles>
+			</configuration>
+		</plugin>
+	  </plugins>
+	</build>
   
 </project>
