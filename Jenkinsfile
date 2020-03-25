@@ -26,7 +26,7 @@ pipeline{
 			
 			}
  	}
-	stage('Maven Build - Clean'){
+	stage('Maven Build - compile'){
 			steps{
 			bat "mvn compile"
 			
