@@ -1,4 +1,5 @@
 properties([[$class: 'JiraProjectProperty'], parameters([choice(choices: 'master\nrelease\nbugfix', description: 'select the branch to build', name: 'branch')])])
+
 currentBuild.displayName = "Reliance_Harikrishna_#"+currentBuild.number
 pipeline{
 	agent any
@@ -11,6 +12,10 @@ pipeline{
 		PATH = "${PATH}:D:/Krishna/Binaries/apache-maven-3.6.0-bin/apache-maven-3.6.0/bin"
 		
 	}
+	parameters {
+        gitParameter tagFilter: 'origin/master', name: 'TAG', type: 'PT_TAG' 
+	}
+	
 	stages{
 	
 		stage('SCM - Checkout'){
