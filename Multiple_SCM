@@ -2,14 +2,14 @@ pipeline {
     agent any
     parameters {
         gitParameter branchFilter: 'origin.*/(.*)', defaultValue: 'master', name: 'BRANCH_A', type: 'PT_BRANCH', useRepository: '.*Reliance_CICD.git'
-        gitParameter branchFilter: 'origin.*/(.*)', defaultValue: 'master', name: 'BRANCH_B', type: 'PT_BRANCH', useRepository: '.*Reliance_CICD_Multipe_SCM.git'
+        
         
     }
     stages {
         stage('Example') {
             steps {
                 git branch: "${params.BRANCH_A}"
-                git branch: "${params.BRANCH_B}"
+                
             }
         }
     }
