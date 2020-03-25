@@ -1,13 +1,32 @@
-node{
+pipeline{
+	agent any
+	
+ stages{
+ 
+ stage('SCM - Checkout'){
+			steps{
+				git credentialsId: 'git_Credentials', url: 'https://github.com/harikrishna12334/Reliance_CICD.git'
+			
+			}
+			
+		}
 
  parallel firstBranch: {
       stage('one'){
-      git url: 'https://github.com/harikrishna12334/Reliance_CICD.git', branch: 'master'         
+      steps {
+      git url: 'https://github.com/harikrishna12334/Reliance_CICD.git', branch: 'master'  
       }
+      
     }, secondBranch: {
        stage('two'){
+       steps {
        git url: 'https://github.com/harikrishna12334/Reliance_CICD.git', branch: 'release'   
+       }
        }
     },
     failFast: true
     }
+	
+	
+   }
+}
