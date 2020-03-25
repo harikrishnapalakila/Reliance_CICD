@@ -23,6 +23,7 @@ pipeline{
 				git credentialsId: 'git_Credentials', url: 'https://github.com/harikrishna12334/Reliance_CICD.git'
 			
 			}
+			
 		}
 	
 	
