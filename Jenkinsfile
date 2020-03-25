@@ -91,7 +91,7 @@ pipeline{
 		stage('Email Notification') {
 			steps {
 		mail bcc: '', body: '''Hi Team,
-		This is jenksin piepline job''', cc: '', from: '', replyTo: '', subject: 'jenkins job', to: 'harikrishnapalakila@gmail.com'
+		Jenkins Build Job has been executed successfully''', cc: '', from: '', replyTo: '', subject: 'jenkins job', to: 'harikrishnapalakila@gmail.com'
 			}
 		}
 		
