@@ -8,8 +8,8 @@ pipeline {
     stages {
         stage('Example') {
             steps {
-                git branch: "${params.BRANCH_A}", url: 'https://github.com/harikrishna12334/Reliance_CICD.git'
-                git branch: "${params.BRANCH_B}", url: 'https://github.com/harikrishna12334/Reliance_CICD_Multipe_SCM.git'
+                git branch: "${params.BRANCH_A}"
+                git branch: "${params.BRANCH_B}"
             }
         }
     }
