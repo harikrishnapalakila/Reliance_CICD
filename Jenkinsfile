@@ -103,12 +103,7 @@ pipeline{
 		
  	}
 			
-	post {
-        always {
-            archiveArtifacts  "target\\**\\*"
-            junit "target\\surefire-reports\\*.xml"
-        }
-    }	
+		
 		
 }
  
