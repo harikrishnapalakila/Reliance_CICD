@@ -1,3 +1,4 @@
+properties([[$class: 'JiraProjectProperty'], parameters([choice(choices: 'master\nrelease\nbugfix', description: 'select the branch to build', name: 'branch')])])
 currentBuild.displayName = "Reliance_Harikrishna_#"+currentBuild.number
 pipeline{
 	agent any
