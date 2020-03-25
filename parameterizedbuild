@@ -1,1 +1,19 @@
-properties([[$class: 'JiraProjectProperty'], parameters([choice(choices: ['master', 'release', 'bugfix'], description: 'select the branch to build', name: 'branch')])])
+properties([[$class: 'JiraProjectProperty'], parameters([choice(choices: 'master\nrelease\nbugfix', description: 'select the branch to build', name: 'branch')])])
+
+urrentBuild.displayName = "Reliance_Harikrishna_#"+currentBuild.number
+pipeline{
+	agent any
+	
+	options {
+		buildDiscarder logRotator(daysToKeepStr: '5', numToKeepStr: '7')
+	}
+
+	stages{
+	
+		stage('SCM - Checkout'){
+			steps{
+				echo "Pulling changes from branch ${params.branch}" 
+        git url: 'https://github.com/harikrishna12334/Reliance_CICD.git', branch: "${params.branch}"
+			
+			}
+		}
