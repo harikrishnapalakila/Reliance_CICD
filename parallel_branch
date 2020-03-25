@@ -3,12 +3,6 @@ pipeline{
 	
  stages{
  
- stage('SCM - Checkout'){
-			steps{
-				git credentialsId: 'git_Credentials', url: 'https://github.com/harikrishna12334/Reliance_CICD.git'
-			
-			}
-			
  parallel firstBranch: {
       stage('one'){
       steps {
@@ -23,7 +17,7 @@ pipeline{
        }
     },
     }
-    }
+	}
     failFast: true
     
 	
