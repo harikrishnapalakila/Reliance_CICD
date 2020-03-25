@@ -1,0 +1,26 @@
+pipeline{
+	agent any
+	
+ stages{
+ 
+ parallel firstBranch: {
+      stage('one'){
+      steps {
+      git url: 'https://github.com/harikrishna12334/Reliance_CICD.git', branch: 'master'  
+      }
+      
+    }, secondBranch: {
+       stage('two'){
+       steps {
+       git url: 'https://github.com/harikrishna12334/Reliance_CICD.git', branch: 'release'   
+       }
+       }
+    },
+    }
+	}
+    failFast: true
+    
+	
+	
+   }
+}
