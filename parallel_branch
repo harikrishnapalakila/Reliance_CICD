@@ -1,0 +1,13 @@
+node{
+
+ parallel firstBranch: {
+      stage('one'){
+      git url: 'https://github.com/harikrishna12334/Reliance_CICD.git', branch: 'master'         
+      }
+    }, secondBranch: {
+       stage('two'){
+       git url: 'https://github.com/harikrishna12334/Reliance_CICD.git', branch: 'release'   
+       }
+    },
+    failFast: true
+    }
