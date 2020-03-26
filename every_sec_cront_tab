@@ -1,0 +1,8 @@
+* * * * *  root echo 'date' >> /tmp/ec2_instance.py
+* * * * *  root sleep 1 ; echo 'date' >> /tmp/ec2_instance.py
+* * * * *  root sleep 2 ; echo 'date' >> /tmp/ec2_instance.py
+.
+.
+.
+.
+* * * * *  root sleep 59 ; echo 'date' >> /tmp/ec2_instance.py
