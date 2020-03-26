@@ -16,7 +16,7 @@ pipeline{
 	parameters {
         gitParameter tagFilter: 'origin/master', name: 'TAG', type: 'PT_TAG' 
 	}
-	triggers {
+	//triggers {
 		//Execute weekdays every four hours starting at minute 0
 		// cron('0 */4 * * 1-5')
 		// cron('* * * * *')
@@ -24,7 +24,7 @@ pipeline{
 		// pollSCM('0 */4 * * 1-5')
 		// pollSCM('* * * * *')
 		
-	}
+	//}
 	
 	stages{
 	
