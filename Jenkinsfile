@@ -118,7 +118,7 @@ pipeline{
 		}
 		
 		
-		stages{
+		
 		stage('Copy file from stage1 to stage2') {
 			parallel{ 
 				stage('Test on windows'){agent {label 'windows'} "steps"{ bat "copy D:\\Krishna\\AWS\\jenkins_declarative_pipeline\\parallel_branch_code\\stage1\\parallel_branch_scripted.txt ..\\stage2\\"}  }	
@@ -126,7 +126,7 @@ pipeline{
 		}
 					       }
 		
-		}
+		
 		
 		
 		
