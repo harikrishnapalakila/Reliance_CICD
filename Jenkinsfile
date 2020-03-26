@@ -121,8 +121,8 @@ pipeline{
 		
 		stage('Copy file from stage1 to stage2') {
 			parallel{ 
-				stage('stage1'){agent {label 'windows'}steps{ bat "copy D:\Krishna\AWS\jenkins_declarative_pipeline\parallel_branch_code\stage1\parallel_branch_scripted.txt ..\stage2\"}  }	
-				stage('stage2'){agent {label 'windows'}steps{ bat "rename D:\Krishna\AWS\jenkins_declarative_pipeline\parallel_branch_code\stage1\stage2.txt stage2_changedfile.txt"} }						     
+				stage('stage1'){agent {label 'windows'}steps{ bat "copy D:\\Krishna\\AWS\\jenkins_declarative_pipeline\\parallel_branch_code\\stage1\\parallel_branch_scripted.txt ..\\stage2\\"}  }	
+				stage('stage2'){agent {label 'windows'}steps{ bat "rename D:\\Krishna\\AWS\\jenkins_declarative_pipeline\\parallel_branch_code\\stage1\\stage2.txt stage2_changedfile.txt"} }						     
 		}
 					       }
 		
