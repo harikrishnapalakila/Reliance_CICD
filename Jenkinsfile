@@ -23,6 +23,7 @@ pipeline{
 		//Query repository weekdays every four hours starting at minute 0
 		// pollSCM('0 */4 * * 1-5')
 		pollSCM('* * * * *')
+		
 	}
 	
 	stages{
