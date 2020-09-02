@@ -26,34 +26,38 @@ pipeline{
 	
 	 	stage('Maven Build - Clean'){
 			steps{
+			// bat "mvn clean"
 			bat "mvn clean"
 			
 			}
  	}
 	stage('Maven Build - compile'){
 			steps{
-			bat "mvn compile"
+			//bat "mvn compile"
+		        bat "mvn compile"
 			
 			}
  	}
 		
 		stage('Maven Build - Test'){
 			steps{
-			bat "mvn test"
-			
+			//bat "mvn test"
+			bat "mvn compile"
 			}
  	}
 	
 		stage('SonarQube- Code Analysis'){
 			steps{
 				withSonarQubeEnv ('sonarqube_server_details') {
-					bat "mvn sonar:sonar"                             
+					// bat "mvn sonar:sonar"                             
+					bat "mvn sonar:sonar"
 				    }
 			}
 		}
 		
 		stage('Maven Build - PKG with Rename war file'){
 			steps{
+			// bat "mvn package"
 			bat "mvn package"
 			
 			
