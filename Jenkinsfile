@@ -27,14 +27,14 @@ pipeline{
 	 	stage('Maven Build - Clean'){
 			steps{
 			// bat "mvn clean"
-			sh "mvn clean"
+			sh 'mvn clean'
 			
 			}
  	}
 	stage('Maven Build - compile'){
 			steps{
 			//bat "mvn compile"
-		        sh "mvn compile"
+		        sh 'mvn compile'
 			
 			}
  	}
