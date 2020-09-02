@@ -13,19 +13,7 @@ pipeline{
 		PATH = "${PATH}:D:/Krishna/Binaries/apache-maven-3.6.0-bin/apache-maven-3.6.0/bin"
 		
 	}
-	parameters {
-        gitParameter tagFilter: 'origin/master', name: 'TAG', type: 'PT_TAG' 
-	}
-	//triggers {
-		//Execute weekdays every four hours starting at minute 0
-		// cron('0 */4 * * 1-5')
-		// cron('* * * * *')
-		//Query repository weekdays every four hours starting at minute 0
-		// pollSCM('0 */4 * * 1-5')
-		// pollSCM('* * * * *')
 		
-	//}
-	
 	stages{
 	
 		stage('SCM - Checkout'){
