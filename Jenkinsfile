@@ -27,14 +27,14 @@ pipeline{
 	 	stage('Maven Build - Clean'){
 			steps{
 			// bat "mvn clean"
-			bat "mvn clean"
+			sh "mvn clean"
 			
 			}
  	}
 	stage('Maven Build - compile'){
 			steps{
 			//bat "mvn compile"
-		        bat "mvn compile"
+		        sh "mvn compile"
 			
 			}
  	}
@@ -42,7 +42,7 @@ pipeline{
 		stage('Maven Build - Test'){
 			steps{
 			//bat "mvn test"
-			bat "mvn compile"
+			sh "mvn compile"
 			}
  	}
 	
@@ -50,7 +50,7 @@ pipeline{
 			steps{
 				withSonarQubeEnv ('sonarqube_server_details') {
 					// bat "mvn sonar:sonar"                             
-					bat "mvn sonar:sonar"
+					sh "mvn sonar:sonar"
 				    }
 			}
 		}
@@ -58,7 +58,7 @@ pipeline{
 		stage('Maven Build - PKG with Rename war file'){
 			steps{
 			// bat "mvn package"
-			bat "mvn package"
+			sh "mvn package"
 			
 			
 			}
