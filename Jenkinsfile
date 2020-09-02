@@ -8,7 +8,8 @@ pipeline{
 	}
 
 	environment {
-		PATH = "${PATH}:D:/Krishna/Binaries/apache-maven-3.6.0-bin/apache-maven-3.6.0/bin"
+		// PATH = "${PATH}:D:/Krishna/Binaries/apache-maven-3.6.0-bin/apache-maven-3.6.0/bin"
+		PATH = "${PATH}:/usr/share/apache-maven/bin"
 		
 	}
 		
