@@ -30,7 +30,7 @@ pipeline{
 	
 		stage('SCM - Checkout'){
 			steps{
-				git credentialsId: 'git_Credentials', url: 'https://github.com/harikrishna12334/Reliance_CICD.git'
+				git credentialsId: 'git_Credentials', url: 'https://github.com/harikrishnapalakila/Reliance_CICD.git'
 			
 			}
 			
