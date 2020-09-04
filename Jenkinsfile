@@ -71,9 +71,9 @@ pipeline{
 				       type: 'war'
 			       ]
 		       ], 
-			       credentialsId: 'Nexus3_21_Credentials', 
+			       credentialsId: 'Nexus3', 
 			       groupId: 'com.codebind', 
-			       nexusUrl: '192.168.56.1:8081', 
+			       nexusUrl: '172.31.60.153:8081', 
 			       nexusVersion: 'nexus3', 
 			       protocol: 'http', 
 			       repository: nexusRepoName, 
