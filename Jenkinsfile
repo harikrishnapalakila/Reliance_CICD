@@ -38,7 +38,8 @@ pipeline{
  	}
 		
 		stage('Maven Build - Test'){
-			steps{
+			steps{ 
+				
 			sh "mvn compile"
 			}
  	}
