@@ -85,7 +85,7 @@ pipeline{
 		stage('Deploy to tomcat8'){
 			steps{
 			 script{
-			wget --user=admin --password=Ma1nH00nPand1t$ http://107.23.96.191:8081/repository/simpleapp-release/com/codebind/MavenWebApp/1.0.0/MavenWebApp-1.0.0.war
+			echo "Deploying war file to tomcat server thru ansible server"
 			 }
 			}
  	}	
