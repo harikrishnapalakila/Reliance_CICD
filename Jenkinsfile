@@ -61,24 +61,21 @@ pipeline{
 		stage('Upload War to Nexus'){
 			steps{
 				script{
-				 def mavenPom = readMavenPom file: 'pom.xml'
-				 def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "simpleapp-snapshot" : "simpleapp-release"
-					nexusArtifactUploader artifacts: [
-			       [
-				       artifactId: 'MavenWebApp', 
-				       classifier: '', 
-				       file: "target/MavenWebApp-${mavenPom.version}.war", 
-				       type: 'war'
-			       ]
-		       ], 
-			       credentialsId: 'Nexus3', 
-			       groupId: 'com.codebind', 
-			       nexusUrl: '172.31.60.153:8081', 
-			       nexusVersion: 'nexus3', 
-			       protocol: 'http', 
-			       repository: nexusRepoName, 
-			       version: "${mavenPom.version}"
-				
+				 	nexusArtifactUploader artifacts: [
+                                          [
+						  artifactId: 'MavenWebApp', 
+						  classifier: '', 
+						  file: 'target/MavenWebApp-1.0.0.war', 
+						  type: 'war'
+					  ]
+					], 
+						credentialsId: 'nexus3', 
+						groupId: 'com.codebind', 
+						nexusUrl: '172.31.60.153', 
+						nexusVersion: 'nexus3', 
+						protocol: 'http', 
+						repository: 'http://107.23.96.191:8081/repository/simpleapp-release', 
+						version: '1.0.0'		
 				
 				}
                        
