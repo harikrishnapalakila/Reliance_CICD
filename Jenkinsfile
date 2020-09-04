@@ -85,9 +85,7 @@ pipeline{
 		stage('Deploy to tomcat8'){
 			steps{
 			 script{
-				 def mavenPom = readMavenPom file: 'pom.xml'
-				 version: "${mavenPom.version}"
-			bat "copy target\\MavenWebApp-${mavenPom.version}.war D:\\Krishna\\AWS\\tomcat\\apache-tomcat-8.5.39\\webapps\\"
+			wget --user=admin --password=Ma1nH00nPand1t$ http://107.23.96.191:8081/repository/simpleapp-release/com/codebind/MavenWebApp/1.0.0/MavenWebApp-1.0.0.war
 			 }
 			}
  	}	
